@@ -1,0 +1,21 @@
+<h1>LIST PAGE</h1>
+
+<a href="{% url 'student_add' %}"> ADD </a>
+
+{% for student in students %}
+
+<p>
+    Name : {{ student.student_name }} <br>
+    Id : {{ student.student_id }} <br>
+    Email : {{ student.email }} <br>
+    Department : {{ student.department }} <br>
+
+    <br>
+
+    <a href="{% url 'student_edit' student.id %}"> edit </a>
+    <a href="{% url 'student_delete' student.id %}"> delete </a>
+
+
+</p>
+
+{% endfor %}
