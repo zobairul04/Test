@@ -1,0 +1,13 @@
+<h1>list page</h1>
+
+<a href="{% url 'laptop_add' %}">add</a>
+{% for laptop in laptops %}
+<p>
+    brand : {{ laptop.brand}} <br>
+    price : {{ laptop.price}} <br>
+    imei : {{ laptop.imei}} <br>
+    color : {{ laptop.color}} <br>
+    <a href="{% url 'laptop_edit' laptop.id %}">edit</a> <br>
+    <a href="{% url 'laptop_delete' laptop.id %}">delete</a>
+</p>
+{% endfor %}
