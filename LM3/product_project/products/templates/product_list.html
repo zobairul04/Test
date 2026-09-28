@@ -1,0 +1,14 @@
+<h1>page product list</h1>
+
+<a href="{% url 'product_add' %}">add</a>
+{% for product in products %}
+<p>
+    Name : {{product.name}} <br>
+    Price : {{product.price}} <br>
+    Description : {{product.description}} <br>
+    <br>
+    <a href="{% url 'product_edit' product.id %}">edit</a>
+    <a href="{% url 'product_delete' product.id %}">delete</a>
+</p>
+
+{% endfor %}
